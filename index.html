@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ToDoList fop MDBootstrap</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+  </head>
+  <body>
+      <h1>TODO App Krzysztof Sękowski</h1>
+      <div id="toDoList">
+          <button type="button" class="btn btn-primary" v-on:click="addNewItem"><i class="fas fa-plus"> Add</i></span></button>
+          <button type="button" class="btn btn-primary" v-on:click="deleteOne"><i class="fas fa-minus"> Remove</i></button>
+          <button type="button" class="btn btn-primary" v-on:click="deleteAll"><i class="fas fa-trash-alt"> Clear</i></button>
+          <ul>
+              <li v-for="(item, index) in items">
+                  {{ parentMessage }} {{ index+1 }}
+              </li>
+            </ul>  
+        </div>
+    <script>
+      var toDoList = new Vue({
+        el: '#toDoList',
+        data: {
+          parentMessage: 'Task number',
+          items: []
+        },
+        methods:{
+          addNewItem: function (){
+            toDoList.items.push({ message: '' })
+          },
+          deleteOne: function(){
+            toDoList.items.pop()
+          },
+          deleteAll: function(){
+            this.items=[]
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

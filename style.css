@@ -1,0 +1,20 @@
+body{
+    background: url('image/pink.png');
+    
+}
+#toDoList{
+    text-align: center;
+    font-size: 60px;
+    color: white;
+}
+body h1{
+    background-color:#0086FF;
+    margin: 2%;
+    text-align: center;
+    border-radius: 0px 50px 0px 50px; 
+    text-shadow: 2px 2px 2px white, 4px 4px 4px gray;
+    letter-spacing: 3px;
+}
+ul{
+    list-style: none;
+}
